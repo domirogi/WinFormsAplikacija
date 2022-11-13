@@ -33,6 +33,7 @@ namespace WinFormsAplikacija
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.djelatniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDrzavljanstvo = new System.Windows.Forms.TextBox();
@@ -51,33 +52,32 @@ namespace WinFormsAplikacija
             this.lblImeDjelatnik = new System.Windows.Forms.Label();
             this.lblIdDjelatnik = new System.Windows.Forms.Label();
             this.dataGridViewClanovi = new System.Windows.Forms.DataGridView();
-            this.dataGridViewDjelatnici = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDodaj = new System.Windows.Forms.Button();
-            this.btnUrdi = new System.Windows.Forms.Button();
-            this.btnOdustani = new System.Windows.Forms.Button();
-            this.btnSpremi = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumRodjenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oIBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.drzavljanstvoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.djelatniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clanoviObiteljiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obriši = new System.Windows.Forms.DataGridViewButtonColumn();
             this.imeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumRodjenaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spolDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clanoviObiteljiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewDjelatnici = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumRodjenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oIBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.drzavljanstvoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnUredi = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnSpremi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClanovi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDjelatnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatniciBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClanovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clanoviObiteljiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDjelatnici)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,6 +114,10 @@ namespace WinFormsAplikacija
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker1.TabIndex = 21;
+            // 
+            // djelatniciBindingSource
+            // 
+            this.djelatniciBindingSource.DataSource = typeof(WinFormsAplikacija.Djelatnici);
             // 
             // comboBox1
             // 
@@ -290,150 +294,6 @@ namespace WinFormsAplikacija
             this.dataGridViewClanovi.TabIndex = 1;
             this.dataGridViewClanovi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClanovi_CellContentClick);
             // 
-            // dataGridViewDjelatnici
-            // 
-            this.dataGridViewDjelatnici.AllowUserToAddRows = false;
-            this.dataGridViewDjelatnici.AllowUserToDeleteRows = false;
-            this.dataGridViewDjelatnici.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDjelatnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.Delete,
-            this.imeDataGridViewTextBoxColumn,
-            this.prezimeDataGridViewTextBoxColumn,
-            this.datumRodjenaDataGridViewTextBoxColumn,
-            this.oIBDataGridViewTextBoxColumn,
-            this.spolDataGridViewTextBoxColumn,
-            this.drzavljanstvoDataGridViewTextBoxColumn,
-            this.Email});
-            this.dataGridViewDjelatnici.DataSource = this.djelatniciBindingSource;
-            this.dataGridViewDjelatnici.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDjelatnici.Location = new System.Drawing.Point(0, 369);
-            this.dataGridViewDjelatnici.Name = "dataGridViewDjelatnici";
-            this.dataGridViewDjelatnici.Size = new System.Drawing.Size(800, 150);
-            this.dataGridViewDjelatnici.TabIndex = 1;
-            this.dataGridViewDjelatnici.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDjelatnici_CellClick);
-            this.dataGridViewDjelatnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDjelatnici_CellContentClick);
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "X";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // btnDodaj
-            // 
-            this.btnDodaj.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnDodaj.Location = new System.Drawing.Point(220, 301);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(75, 31);
-            this.btnDodaj.TabIndex = 2;
-            this.btnDodaj.Text = "Dodaj";
-            this.btnDodaj.UseVisualStyleBackColor = false;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
-            // 
-            // btnUrdi
-            // 
-            this.btnUrdi.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnUrdi.Location = new System.Drawing.Point(352, 301);
-            this.btnUrdi.Name = "btnUrdi";
-            this.btnUrdi.Size = new System.Drawing.Size(75, 31);
-            this.btnUrdi.TabIndex = 3;
-            this.btnUrdi.Text = "Uredi";
-            this.btnUrdi.UseVisualStyleBackColor = false;
-            this.btnUrdi.Click += new System.EventHandler(this.btnUrdi_Click);
-            // 
-            // btnOdustani
-            // 
-            this.btnOdustani.Location = new System.Drawing.Point(466, 301);
-            this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 31);
-            this.btnOdustani.TabIndex = 4;
-            this.btnOdustani.Text = "Odustani";
-            this.btnOdustani.UseVisualStyleBackColor = true;
-            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
-            // 
-            // btnSpremi
-            // 
-            this.btnSpremi.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnSpremi.Location = new System.Drawing.Point(600, 301);
-            this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(75, 31);
-            this.btnSpremi.TabIndex = 5;
-            this.btnSpremi.Text = "Spremi";
-            this.btnSpremi.UseVisualStyleBackColor = false;
-            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            // 
-            // prezimeDataGridViewTextBoxColumn
-            // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            // 
-            // datumRodjenaDataGridViewTextBoxColumn
-            // 
-            this.datumRodjenaDataGridViewTextBoxColumn.DataPropertyName = "DatumRodjena";
-            this.datumRodjenaDataGridViewTextBoxColumn.HeaderText = "DatumRodjena";
-            this.datumRodjenaDataGridViewTextBoxColumn.Name = "datumRodjenaDataGridViewTextBoxColumn";
-            // 
-            // oIBDataGridViewTextBoxColumn
-            // 
-            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
-            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
-            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
-            // 
-            // spolDataGridViewTextBoxColumn
-            // 
-            this.spolDataGridViewTextBoxColumn.DataPropertyName = "Spol";
-            this.spolDataGridViewTextBoxColumn.HeaderText = "Spol";
-            this.spolDataGridViewTextBoxColumn.Items.AddRange(new object[] {
-            "Muško",
-            "Žensko"});
-            this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
-            this.spolDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.spolDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // drzavljanstvoDataGridViewTextBoxColumn
-            // 
-            this.drzavljanstvoDataGridViewTextBoxColumn.DataPropertyName = "Drzavljanstvo";
-            this.drzavljanstvoDataGridViewTextBoxColumn.HeaderText = "Drzavljanstvo";
-            this.drzavljanstvoDataGridViewTextBoxColumn.Name = "drzavljanstvoDataGridViewTextBoxColumn";
-            // 
-            // djelatniciBindingSource
-            // 
-            this.djelatniciBindingSource.DataSource = typeof(WinFormsAplikacija.Djelatnici);
-            // 
-            // clanoviObiteljiBindingSource
-            // 
-            this.clanoviObiteljiBindingSource.DataSource = typeof(WinFormsAplikacija.ClanoviObitelji);
-            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -476,6 +336,146 @@ namespace WinFormsAplikacija
             this.spolDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.spolDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // clanoviObiteljiBindingSource
+            // 
+            this.clanoviObiteljiBindingSource.DataSource = typeof(WinFormsAplikacija.ClanoviObitelji);
+            // 
+            // dataGridViewDjelatnici
+            // 
+            this.dataGridViewDjelatnici.AllowUserToAddRows = false;
+            this.dataGridViewDjelatnici.AllowUserToDeleteRows = false;
+            this.dataGridViewDjelatnici.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDjelatnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.Delete,
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.datumRodjenaDataGridViewTextBoxColumn,
+            this.oIBDataGridViewTextBoxColumn,
+            this.spolDataGridViewTextBoxColumn,
+            this.drzavljanstvoDataGridViewTextBoxColumn,
+            this.Email});
+            this.dataGridViewDjelatnici.DataSource = this.djelatniciBindingSource;
+            this.dataGridViewDjelatnici.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewDjelatnici.Location = new System.Drawing.Point(0, 369);
+            this.dataGridViewDjelatnici.Name = "dataGridViewDjelatnici";
+            this.dataGridViewDjelatnici.Size = new System.Drawing.Size(800, 150);
+            this.dataGridViewDjelatnici.TabIndex = 1;
+            this.dataGridViewDjelatnici.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDjelatnici_CellClick);
+            this.dataGridViewDjelatnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDjelatnici_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "X";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            // 
+            // datumRodjenaDataGridViewTextBoxColumn
+            // 
+            this.datumRodjenaDataGridViewTextBoxColumn.DataPropertyName = "DatumRodjena";
+            this.datumRodjenaDataGridViewTextBoxColumn.HeaderText = "DatumRodjena";
+            this.datumRodjenaDataGridViewTextBoxColumn.Name = "datumRodjenaDataGridViewTextBoxColumn";
+            // 
+            // oIBDataGridViewTextBoxColumn
+            // 
+            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
+            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
+            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
+            // 
+            // spolDataGridViewTextBoxColumn
+            // 
+            this.spolDataGridViewTextBoxColumn.DataPropertyName = "Spol";
+            this.spolDataGridViewTextBoxColumn.HeaderText = "Spol";
+            this.spolDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "Muško",
+            "Žensko"});
+            this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
+            this.spolDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.spolDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // drzavljanstvoDataGridViewTextBoxColumn
+            // 
+            this.drzavljanstvoDataGridViewTextBoxColumn.DataPropertyName = "Drzavljanstvo";
+            this.drzavljanstvoDataGridViewTextBoxColumn.HeaderText = "Drzavljanstvo";
+            this.drzavljanstvoDataGridViewTextBoxColumn.Name = "drzavljanstvoDataGridViewTextBoxColumn";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnDodaj.Location = new System.Drawing.Point(220, 301);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(75, 31);
+            this.btnDodaj.TabIndex = 2;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
+            // btnUredi
+            // 
+            this.btnUredi.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnUredi.Location = new System.Drawing.Point(352, 301);
+            this.btnUredi.Name = "btnUredi";
+            this.btnUredi.Size = new System.Drawing.Size(75, 31);
+            this.btnUredi.TabIndex = 3;
+            this.btnUredi.Text = "Uredi";
+            this.btnUredi.UseVisualStyleBackColor = false;
+            this.btnUredi.Click += new System.EventHandler(this.btnUrdi_Click);
+            // 
+            // btnOdustani
+            // 
+            this.btnOdustani.Location = new System.Drawing.Point(466, 301);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(75, 31);
+            this.btnOdustani.TabIndex = 4;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
+            // btnSpremi
+            // 
+            this.btnSpremi.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSpremi.Location = new System.Drawing.Point(600, 301);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(75, 31);
+            this.btnSpremi.TabIndex = 5;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = false;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,7 +483,7 @@ namespace WinFormsAplikacija
             this.ClientSize = new System.Drawing.Size(800, 519);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.btnUrdi);
+            this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dataGridViewDjelatnici);
             this.Controls.Add(this.panel1);
@@ -492,10 +492,10 @@ namespace WinFormsAplikacija
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClanovi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDjelatnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatniciBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClanovi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clanoviObiteljiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDjelatnici)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -516,7 +516,7 @@ namespace WinFormsAplikacija
         private System.Windows.Forms.DataGridView dataGridViewClanovi;
         private System.Windows.Forms.DataGridView dataGridViewDjelatnici;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.Button btnUrdi;
+        private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.BindingSource clanoviObiteljiBindingSource;

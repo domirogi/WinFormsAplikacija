@@ -74,7 +74,7 @@ namespace WinFormsAplikacija
 
         private void btnUrdi_Click(object sender, EventArgs e)
         {
-            btnUrdi.Enabled = false;
+            btnUredi.Enabled = false;
             panel1.Enabled = true;
             txtImeDjelatnik.Focus();
         }
@@ -83,7 +83,7 @@ namespace WinFormsAplikacija
         {
             panel1.Enabled = false;
             btnDodaj.Enabled = true;
-            btnUrdi.Enabled = true;
+            btnUredi.Enabled = true;
             djelatniciBindingSource.ResetBindings(false);
             foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
             {
@@ -112,7 +112,7 @@ namespace WinFormsAplikacija
                 await db.SaveChangesAsync();
                 panel1.Enabled = false;
                 btnDodaj.Enabled = true;
-                btnUrdi.Enabled = true;
+                btnUredi.Enabled = true;
                 MessageBox.Show("Uspješno spremljeno u bazu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

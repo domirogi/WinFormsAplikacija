@@ -73,32 +73,7 @@ namespace WinFormsAplikacija
         }
 
        
-        private void btnOdustani_Click(object sender, EventArgs e)
-        {
-            panel1.Enabled = false;
-            btnDodaj.Enabled = true;
-            btnUredi.Enabled = true;
-            djelatniciBindingSource.ResetBindings(false);
-            foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
-            {
-                switch (entry.State)
-                {
-                    case System.Data.Entity.EntityState.Detached:
-                        break;
-                    case System.Data.Entity.EntityState.Unchanged:
-                        break;
-                    case System.Data.Entity.EntityState.Added:
-                        break;
-                    case System.Data.Entity.EntityState.Deleted:
-                        break;
-                    case System.Data.Entity.EntityState.Modified:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
+       
         private async void btnSpremi_Click(object sender, EventArgs e)
         {
             try
@@ -161,6 +136,32 @@ namespace WinFormsAplikacija
             btnUredi.Enabled = false;
             panel1.Enabled = true;
             txtImeDjelatnik.Focus();
+        }
+
+        private void btnOdustani_Click_1(object sender, EventArgs e)
+        {
+            panel1.Enabled = false;
+            btnDodaj.Enabled = true;
+            btnUredi.Enabled = true;
+            djelatniciBindingSource.ResetBindings(false);
+            foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case System.Data.Entity.EntityState.Detached:
+                        break;
+                    case System.Data.Entity.EntityState.Unchanged:
+                        break;
+                    case System.Data.Entity.EntityState.Added:
+                        break;
+                    case System.Data.Entity.EntityState.Deleted:
+                        break;
+                    case System.Data.Entity.EntityState.Modified:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

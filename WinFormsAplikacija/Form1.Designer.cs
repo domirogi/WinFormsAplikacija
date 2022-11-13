@@ -373,6 +373,7 @@ namespace WinFormsAplikacija
             this.btnOdustani.TabIndex = 4;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click_1);
             // 
             // btnSpremi
             // 

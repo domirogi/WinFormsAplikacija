@@ -72,13 +72,7 @@ namespace WinFormsAplikacija
             clanoviObiteljiBindingSource.DataSource = null;
         }
 
-        private void btnUrdi_Click(object sender, EventArgs e)
-        {
-            btnUredi.Enabled = false;
-            panel1.Enabled = true;
-            txtImeDjelatnik.Focus();
-        }
-
+       
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             panel1.Enabled = false;
@@ -160,6 +154,13 @@ namespace WinFormsAplikacija
                 }
             }
            
+        }
+
+        private void btnUredi_Click(object sender, EventArgs e)
+        {
+            btnUredi.Enabled = false;
+            panel1.Enabled = true;
+            txtImeDjelatnik.Focus();
         }
     }
 }
